@@ -3,17 +3,14 @@ require([
   "esri/views/MapView",
   "esri/Graphic",
   "esri/geometry/Point",
-  "esri/symbols/SimpleMarkerSymbol",
-], function(Map, MapView,
-      Graphic, Point, SimpleMarkerSymbol
-) {
-  
+  "esri/symbols/SimpleMarkerSymbol"
+], function(Map, MapView, Graphic, Point, SimpleMarkerSymbol) {
   var map = new Map({
     basemap: "hybrid"
   });
-    
+
   var view = new MapView({
-    container: "viewDiv",  
+    container: "viewDiv",
     map: map,
     center: [-9.0, 53.0],
     zoom: 7
@@ -27,16 +24,17 @@ require([
   var markerSymbol = new SimpleMarkerSymbol({
     color: "red",
     style: "square",
-    size: "8px",
+    size: "8px"
   });
-  
+
   var attributes = {
-    Name: "Galway, Ireland",
+    Name: "Galway, Ireland"
   };
-  
+
   var popupTemplate = {
     title: "{Name}",
-    content: "With a population of 80,000, Galway is the sixth most populous city in Ireland, and was first settled in 1124."
+    content:
+      "With a population of 80,000, Galway is the sixth most populous city in Ireland, and was first settled in 1124."
   };
 
   var pointGraphic = new Graphic({
